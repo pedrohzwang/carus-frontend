@@ -1,6 +1,8 @@
-import { ThemeType } from "grommet";
+import { ThemeType, grommet } from "grommet";
+import { Colors } from "grommet/themes/base";
+import { deepMerge } from "grommet/utils";
 
-const colors = {
+const colorsEx = {
   // Azul
   primary: {
     c100: "#121B30",
@@ -50,25 +52,47 @@ const colors = {
   actionSave: "#4CAF50",
 };
 
-const globalTheme: ThemeType = {
+const colors: Colors = {
+  primary: "#326e81",
+  "dark-1": "#1e596a",
+  "light-1": "#3C89A3",
+  "background-back": {
+    light: "#CACED2",
+    dark: "#242C34",
+  },
+  secondary: "#CC8072",
+  "dark-2": "#c36557",
+  "light-2": "#c58076",
+  "status-ok": "#4CAF50",
+  "status-warning": "#FFC532",
+  "status-error": "#FF2832",
+  "status-critical": "#FF2832",
+  "status-disabled": "#B2B2B8",
+  backgrounds: {
+    light: "#CACED2",
+    dark: "#242C34",
+  },
+};
+
+const globalTheme: ThemeType = deepMerge(grommet, {
   global: {
-    colors: {
-      "background-back": "#242C34",
-      "status-ok": "#4CAF50",
-      "status-warning": "#FFC532",
-      "status-error": "#CC8072",
-      "status-critical": "#CC8072",
-      "status-disabled": "#B2B2B8",
-      primary: "#3C89A3",
-      "dark-1": "#326e81",
-      "light-1": "#54b1ca"
+    active: {
+      background: {
+        light: "#CACED2",
+        dark: "#242C34",
+      },
+      color: {
+        light: "#000000",
+        dark: "#FFF",
+      },
     },
+    colors,
     font: {
       family: "Roboto",
       size: "18px",
       height: "20px",
     },
   },
-};
+});
 
 export default globalTheme;
