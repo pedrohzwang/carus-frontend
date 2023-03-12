@@ -3,9 +3,9 @@ import Home from "./pages/Home/Home";
 
 const App = () => {
   return (
-    <Page>
+    <Page kind="narrow">
       <Home />
-      <PageContent></PageContent>
+      <PageContent background="primary" fill="horizontal"></PageContent>
     </Page>
   );
 };

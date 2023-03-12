@@ -45,54 +45,105 @@ const colorsEx = {
   stateLinks: "#0D47A1",
   stateSuccess: "#4CAF50",
   stateWarning: "#FFC532",
-  gradientA1: "#121B30",
-  gradientA2: "#3A3552",
-  gradientB1: "#121B30",
-  gradientB2: "#33415F",
   actionSave: "#4CAF50",
 };
 
-const colors: Colors = {
-  primary: "#326e81",
-  "dark-1": "#1e596a",
-  "light-1": "#3C89A3",
-  "background-back": {
-    light: "#CACED2",
-    dark: "#242C34",
+const colors: CarUsColorsTheme = {
+  primary: {
+    c100: "#1E596A",
+    c200: "#326E81",
+    c300: "#3C89A3",
+    c400: "#449ABA",
   },
-  secondary: "#CC8072",
-  "dark-2": "#c36557",
-  "light-2": "#c58076",
-  "status-ok": "#4CAF50",
-  "status-warning": "#FFC532",
-  "status-error": "#FF2832",
-  "status-critical": "#FF2832",
-  "status-disabled": "#B2B2B8",
-  backgrounds: {
-    light: "#CACED2",
-    dark: "#242C34",
+  secondary: {
+    c100: "#C36557",
+    c200: "#CC8072",
   },
+  background: {
+    light: {
+      c100: "#CACED2",
+      c200: "#EAEEF2",
+    },
+    dark: {
+      c100: "#242C34",
+      c200: "#2C3742",
+    },
+  },
+  font: {
+    light: {
+      c100: "#E7E7E7",
+      c200: "#FFFFFF",
+    },
+    dark: {
+      c100: "#000000",
+      c200: "#151515",
+    },
+  },
+  complementary: {
+    black: {
+      c100: "#000000",
+      c200: "#151515",
+    },
+    white: {
+      c100: "#E7E7E7",
+      c200: "#FFFFFF",
+    },
+  },
+  stateDanger: "#B5373D",
+  stateError: "#F12832",
+  stateLinks: "#1C3A8E",
+  stateWarning: "#FFC532",
+  stateSuccess: "#4CAF50",
+  actionSave: "#4CAF50",
+  stateDisabled: "#B2B2B8",
 };
 
-const globalTheme: ThemeType = deepMerge(grommet, {
+export interface CarUsTheme extends ThemeType {
+  colors: CarUsColorsTheme;
+}
+
+interface CarUsColorsTheme {
+  primary: CarUsColorsVariantTheme;
+  secondary: CarUsColorsVariantTheme;
+  complementary?: CarUsComplementaryColorsVariantTheme;
+  background: CarUsColorModeVariantTheme;
+  spotlight?: CarUsColorsVariantTheme;
+  font: CarUsColorModeVariantTheme;
+  stateDanger: string;
+  stateError: string;
+  stateLinks: string;
+  stateWarning: string;
+  stateSuccess: string;
+  actionSave: string;
+  stateDisabled: string;
+}
+
+interface CarUsColorsVariantTheme {
+  c100: string;
+  c200: string;
+  c300?: string;
+  c400?: string;
+}
+
+interface CarUsComplementaryColorsVariantTheme {
+  black: CarUsColorsVariantTheme;
+  white: CarUsColorsVariantTheme;
+}
+
+interface CarUsColorModeVariantTheme {
+  light: CarUsColorsVariantTheme;
+  dark: CarUsColorsVariantTheme;
+}
+
+const globalTheme: CarUsTheme = {
   global: {
-    active: {
-      background: {
-        light: "#CACED2",
-        dark: "#242C34",
-      },
-      color: {
-        light: "#000000",
-        dark: "#FFF",
-      },
-    },
-    colors,
     font: {
       family: "Roboto",
       size: "18px",
       height: "20px",
     },
   },
-});
+  colors,
+};
 
 export default globalTheme;

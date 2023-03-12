@@ -1,7 +1,7 @@
 import { Grommet } from "grommet";
 import { createContext, ReactNode, useState, useMemo } from "react";
 import { ETheme } from "../shared/enums/ETheme";
-import globalTheme from "../theme/theme";
+import globalTheme from "./theme";
 
 export const ThemeContext = createContext<ThemeContextType>(
   {} as ThemeContextType
@@ -28,7 +28,6 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
       <Grommet
         theme={globalTheme}
         full
-        themeMode={theme === ETheme.DARK ? "dark" : "light"}
       >
         {children}
       </Grommet>

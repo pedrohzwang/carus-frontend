@@ -1,7 +1,7 @@
 import { Header, Text, Box, Button } from "grommet";
 import { Menu, Moon, Sun } from "grommet-icons";
 import { useContext } from "react";
-import { ThemeContext } from "../../context/ThemeContext";
+import { ThemeContext } from "../../theme/ThemeProvider";
 import { ETheme } from "../../shared/enums/ETheme";
 import { AppBarProps } from "./AppBar.type";
 
