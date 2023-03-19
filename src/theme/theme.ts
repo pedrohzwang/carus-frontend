@@ -1,3 +1,4 @@
+import { responsiveBreakpoints } from "./breakpoints";
 import { CarUsColorsTheme, CarUsTheme } from "./theme.type";
 
 export const colors: CarUsColorsTheme = {
@@ -52,6 +53,7 @@ export const colors: CarUsColorsTheme = {
 
 const globalTheme: CarUsTheme = {
   global: {
+    breakpoints: responsiveBreakpoints,
     font: {
       family: "Roboto",
       size: "18px",
