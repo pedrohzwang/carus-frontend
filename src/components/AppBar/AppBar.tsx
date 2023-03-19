@@ -20,13 +20,12 @@ const AppBar = (props: AppBarProps) => {
               flex={size !== "xxsmall" ? "shrink" : "grow"}
               justify={size !== "xxsmall" ? "start" : "center"}
             >
-              <Text size={props.titleSize ?? "large"}>{props.mainTitle}</Text>
+              <Text size={props.titleSize ?? "large"} textAlign="center">{props.mainTitle}</Text>
             </Box>
             {size !== "xxsmall" && (
               <Box
                 direction="row"
                 justify="start"
-                wrap={false}
                 pad={{ left: "xlarge", right: "xlarge" }}
                 gap="xlarge"
                 basis={size === "small" || size === "xsmall" ? "3/4" : "full"}
