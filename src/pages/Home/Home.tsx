@@ -1,9 +1,12 @@
-import { Box, Button, Header, Text } from "grommet";
-import { Menu } from "grommet-icons";
-import AppBar from "../../components/AppBar/AppBar";
+import { PageContent } from "grommet";
+import globalTheme from "../../theme/theme";
 
-export default function Home() {
-  const menus = ["Locar", "Meus carros", "Minhas locações"];
-
-  return <AppBar mainTitle="CarUs" menus={menus}  rightMenu/>;
+function Home() {
+  return (
+    <PageContent background={globalTheme.colors.background.dark.c100}>
+      <div style={{ height: "94vh" }}></div>
+    </PageContent>
+  );
 }
+
+export default Home;
