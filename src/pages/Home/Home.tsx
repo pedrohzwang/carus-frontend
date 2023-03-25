@@ -1,11 +1,11 @@
-import { PageContent } from "grommet";
-import globalTheme from "../../theme/theme";
+import {  Main } from "grommet";
+import TopMenu from "../../components/TopMenu/TopMenu";
 
 function Home() {
   return (
-    <PageContent background={globalTheme.colors.background.dark.c100}>
-      <div style={{ height: "94vh" }}></div>
-    </PageContent>
+    <Main >
+      <TopMenu />
+    </Main>
   );
 }
 
