@@ -1,8 +1,8 @@
-import { ReactElement } from "react";
+import { ReactElement, ReactNode } from "react";
 
 export interface AppBarProps {
   mainTitle: string;
-  menus?: string[];
+  menus?: ReactNode[];
   rightMenu?: boolean;
   children?: ReactElement;
   height?:
