@@ -1,9 +1,9 @@
 import { Main } from "grommet";
-import Home from "./pages/Home/Home";
+import Home from "./routes/Home/Home";
 import globalTheme from "./theme/theme";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MyCars from "./pages/MyCars/MyCars";
-import MyRentals from "./pages/MyRentals/MyRentals";
+import MyCars from "./routes/MyCars/MyCars";
+import MyRentals from "./routes/MyRentals/MyRentals";
 
 const App = () => {
   return (

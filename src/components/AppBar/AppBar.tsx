@@ -21,9 +21,7 @@ const AppBar = (props: AppBarProps) => {
               flex={size !== "xxsmall" ? "shrink" : "grow"}
               justify={size !== "xxsmall" ? "start" : "center"}
             >
-              <Text size={props.titleSize ?? "large"} textAlign="center">
-                {props.mainTitle}
-              </Text>
+              {props.mainTitle}
             </Box>
             {size !== "xxsmall" && (
               <Box
