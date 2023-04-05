@@ -1,7 +1,6 @@
 import { Header, Box, Button, ResponsiveContext, Grommet } from "grommet";
 import { Menu } from "grommet-icons";
 import globalTheme from "../../theme/theme";
-import Text from "../Text/Text";
 import { AppBarProps } from "./AppBar.type";
 
 const AppBar = (props: AppBarProps) => {
