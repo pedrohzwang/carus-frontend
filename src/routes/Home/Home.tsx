@@ -1,6 +1,6 @@
 import { Main } from "grommet";
 import TopMenu from "../../features/TopMenu/TopMenu";
-import CarCarousel from "../../features/CarCarousel/CarCarousel";
+import CarCarousel from "../../features/CarCard/CarCard";
 
 function Home() {
   return (
