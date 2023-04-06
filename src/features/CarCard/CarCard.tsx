@@ -1,13 +1,34 @@
-import { Carousel, Image } from "grommet";
-import { CarCard } from "./CarCard.type";
+import { Box, Carousel, Image } from "grommet";
+import { CarCardProps, CarInfoProps } from "./CarCard.type";
 import globalTheme from "../../theme/theme";
 import Card from "../../components/Card/Card";
+import Text from "../../components/Text/Text";
 
-function CarCarousel(props: CarCard) {
+const CarInfo = ({ car }: CarInfoProps) => {
   return (
-    <Card width="340px" background={globalTheme.colors.background.light.c100} radius={globalTheme.patterns.border.radius.xxlarge}>
+    <Box
+      pad={{
+        horizontal: globalTheme.patterns.spacing.medium,
+        top: globalTheme.patterns.spacing.small,
+        bottom: globalTheme.patterns.spacing.xsmall,
+      }}
+    >
+      <Text color={globalTheme.colors.primary.c100} weight="bold">
+        {car.model}
+      </Text>
+    </Box>
+  );
+};
+
+function CarCarousel(props: CarCardProps) {
+  return (
+    <Card
+      width="340px"
+      background={globalTheme.colors.background.light.c100}
+      radius={globalTheme.patterns.border.radius.xxlarge}
+    >
       <Carousel height="200px">
-        {props.data.map((url) => (
+        {props.images.map((url) => (
           <Image
             key={url}
             src={url}
@@ -16,6 +37,7 @@ function CarCarousel(props: CarCard) {
           />
         ))}
       </Carousel>
+      <CarInfo car={props.car} />
     </Card>
   );
 }

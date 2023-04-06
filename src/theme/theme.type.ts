@@ -40,6 +40,7 @@ interface CarUsColorModeVariantTheme {
 
 interface CarUsPatterns {
   border: CarUsBorderTheme;
+  spacing: CarUsSpacingSizeTheme
 }
 
 interface CarUsBorderTheme {
@@ -52,4 +53,12 @@ export interface CarUsBorderSizeTheme {
   medium: string;
   large: string;
   xxlarge?: string;
+}
+
+export interface CarUsSpacingSizeTheme {
+  xsmall: string;
+  small: string;
+  medium: string;
+  large: string;
+  xlarge?: string;
 }
