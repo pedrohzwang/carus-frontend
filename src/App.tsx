@@ -1,4 +1,4 @@
-import { Main } from "grommet";
+import { Main, Page } from "grommet";
 import Home from "./routes/Home/Home";
 import globalTheme from "./theme/theme";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -7,7 +7,7 @@ import MyRentals from "./routes/MyRentals/MyRentals";
 
 const App = () => {
   return (
-    <Main background={globalTheme.colors.background.dark.c100}>
+    <Page kind="full">
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -15,7 +15,7 @@ const App = () => {
           <Route path="/my-rentals" element={<MyRentals />} />
         </Routes>
       </Router>
-    </Main>
+    </Page>
   );
 };
 
