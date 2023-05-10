@@ -61,6 +61,36 @@ const globalTheme: CarUsTheme = {
     },
   },
   colors,
+  carousel: {
+    animation: {
+      duration: 300,
+    },
+    icons: {
+      color: colors.primary.c400,
+    },
+  },
+  patterns: {
+    border: {
+      radius: {
+        small: "4px",
+        medium: "12px",
+        large: "24px",
+        xxlarge: "36px",
+      },
+      size: {
+        small: "1px",
+        medium: "2px",
+        large: "4px",
+      },
+    },
+    spacing: {
+      xsmall: "4px",
+      small: "8px",
+      medium: "16px",
+      large: "24px",
+      xlarge: "32px",
+    },
+  },
 };
 
 export default globalTheme;

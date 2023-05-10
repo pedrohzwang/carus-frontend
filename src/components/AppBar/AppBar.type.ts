@@ -1,7 +1,7 @@
 import { ReactElement, ReactNode } from "react";
 
 export interface AppBarProps {
-  mainTitle: string;
+  mainTitle: ReactNode;
   menus?: ReactNode[];
   rightMenu?: boolean;
   children?: ReactElement;
@@ -14,4 +14,5 @@ export interface AppBarProps {
     | "xlarge"
     | "xxlarge";
   titleSize?: "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge";
+  redirectOnTitle?: boolean
 }

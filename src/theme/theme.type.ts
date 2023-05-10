@@ -1,9 +1,8 @@
 import { ThemeType } from "grommet";
 
-
-
 export interface CarUsTheme extends ThemeType {
   colors: CarUsColorsTheme;
+  patterns: CarUsPatterns;
 }
 
 export interface CarUsColorsTheme {
@@ -37,4 +36,29 @@ interface CarUsComplementaryColorsVariantTheme {
 interface CarUsColorModeVariantTheme {
   light: CarUsColorsVariantTheme;
   dark: CarUsColorsVariantTheme;
+}
+
+interface CarUsPatterns {
+  border: CarUsBorderTheme;
+  spacing: CarUsSpacingSizeTheme
+}
+
+interface CarUsBorderTheme {
+  radius: CarUsBorderSizeTheme;
+  size: CarUsBorderSizeTheme
+}
+
+export interface CarUsBorderSizeTheme {
+  small: string;
+  medium: string;
+  large: string;
+  xxlarge?: string;
+}
+
+export interface CarUsSpacingSizeTheme {
+  xsmall: string;
+  small: string;
+  medium: string;
+  large: string;
+  xlarge?: string;
 }

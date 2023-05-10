@@ -1,7 +1,6 @@
 import { Header, Box, Button, ResponsiveContext, Grommet } from "grommet";
 import { Menu } from "grommet-icons";
 import globalTheme from "../../theme/theme";
-import Text from "../Text/Text";
 import { AppBarProps } from "./AppBar.type";
 
 const AppBar = (props: AppBarProps) => {
@@ -21,9 +20,7 @@ const AppBar = (props: AppBarProps) => {
               flex={size !== "xxsmall" ? "shrink" : "grow"}
               justify={size !== "xxsmall" ? "start" : "center"}
             >
-              <Text size={props.titleSize ?? "large"} textAlign="center">
-                {props.mainTitle}
-              </Text>
+              {props.mainTitle}
             </Box>
             {size !== "xxsmall" && (
               <Box
