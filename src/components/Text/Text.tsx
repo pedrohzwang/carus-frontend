@@ -1,17 +1,26 @@
-import { Text as GrommetText, TextExtendedProps } from "grommet";
 import styled, { css } from "styled-components";
-import globalTheme from "../../theme/theme";
+import {
+  Text as MText,
+  TextProps as MTextProps,
+  useMantineTheme,
+} from "@mantine/core";
+import { StyledTextProps } from "./Text.type";
 
-const StyledText: React.FC<TextExtendedProps> = styled(GrommetText)`
-  ${(props: TextExtendedProps) => {
+const StyledText: React.FC<StyledTextProps> = styled(MText)`
+  ${(props: MTextProps) => {
+    // TODO: ALTERAR PARA PEGAR DO TEMA E NÃO FIXO
     return css`
-      color: ${props.color ? props.color : globalTheme.colors.font.light.c100};
+      color: black;
     `;
   }}
 `;
 
-function Text(props: TextExtendedProps) {
-  return <StyledText {...props}>{props.children}</StyledText>;
-}
+export function Text(props: MTextProps) {
+  const theme = useMantineTheme();
 
-export default Text;
+  return (
+    <StyledText {...props} theme={theme}>
+      {props.children}
+    </StyledText>
+  );
+}

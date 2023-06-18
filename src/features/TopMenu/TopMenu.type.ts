@@ -2,7 +2,7 @@ import { ReactElement, ReactNode } from "react";
 
 export interface AppBarProps {
   mainTitle: ReactNode;
-  menus?: ReactNode[];
+  menus?: AppBarMenuProps[];
   rightMenu?: boolean;
   children?: ReactElement;
   height?:
@@ -15,4 +15,9 @@ export interface AppBarProps {
     | "xxlarge";
   titleSize?: "xsmall" | "small" | "medium" | "large" | "xlarge" | "xxlarge";
   redirectOnTitle?: boolean
+}
+
+export interface AppBarMenuProps {
+  component: ReactNode
+  key: string
 }

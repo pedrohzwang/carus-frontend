@@ -1,16 +1,11 @@
-import { Main } from "grommet";
-import Text from "../../components/Text/Text";
-import TopMenu from "../../features/TopMenu/TopMenu";
+import { Text } from "../../components/Text/Text";
+import { TopMenu } from "../../features/TopMenu/TopMenu";
 
-function MyRentals() {
+export function MyRentals() {
   return (
     <>
       <TopMenu />
-      <Main pad="small">
-        <Text>Minhas locações</Text>
-      </Main>
+      <Text>Minhas locações</Text>
     </>
   );
 }
-
-export default MyRentals;

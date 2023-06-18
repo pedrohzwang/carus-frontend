@@ -1,11 +1,9 @@
-import { CarouselExtendedProps } from "grommet";
 import { CarDTO } from "../../shared/dto/CarDTO";
 
-export interface CarCardProps extends Omit<CarouselExtendedProps, "children"> {
-  images: string[];
+export interface CarInfoProps {
   car: CarDTO;
 }
 
-export interface CarInfoProps {
+export interface CarCardPropsV2 {
   car: CarDTO;
 }
