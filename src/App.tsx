@@ -1,21 +1,37 @@
-import { Main, Page } from "grommet";
-import Home from "./routes/Home/Home";
-import globalTheme from "./theme/theme";
+import { Home } from "./routes/Home/Home";
+import { carUsDarkTheme, carUsLightTheme } from "./theme/theme";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MyCars from "./routes/MyCars/MyCars";
-import MyRentals from "./routes/MyRentals/MyRentals";
+import { MyRentals } from "./routes/MyRentals/MyRentals";
+import {
+  MantineProvider,
+  ColorSchemeProvider,
+  ColorScheme,
+} from "@mantine/core";
+import { useState } from "react";
 
 const App = () => {
+  const [colorScheme, setColorScheme] = useState<ColorScheme>("dark");
+  const toggleColorScheme = () =>
+    setColorScheme(colorScheme === "dark" ? "light" : "dark");
+
   return (
-    <Page kind="full">
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/my-cars" element={<MyCars />} />
-          <Route path="/my-rentals" element={<MyRentals />} />
-        </Routes>
-      </Router>
-    </Page>
+    <ColorSchemeProvider
+      colorScheme={colorScheme}
+      toggleColorScheme={toggleColorScheme}
+    >
+      <MantineProvider
+        theme={colorScheme === "dark" ? carUsDarkTheme : carUsLightTheme}
+      >
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/my-cars" element={<MyCars />} />
+            <Route path="/my-rentals" element={<MyRentals />} />
+          </Routes>
+        </Router>
+      </MantineProvider>
+    </ColorSchemeProvider>
   );
 };
 

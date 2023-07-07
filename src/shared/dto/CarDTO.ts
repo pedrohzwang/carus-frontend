@@ -8,4 +8,5 @@ export interface CarDTO {
   gearShift: EGear;
   price: number;
   year: number;
+  images?: string[];
 }

@@ -1,6 +1,3 @@
-import { BoxExtendedProps } from "grommet/components";
+import { CardProps as MCardProps } from "@mantine/core";
 
-export interface CardProps extends BoxExtendedProps {
-  radius?: string;
-  borderColor?: string;
-}
+export interface CardProps extends MCardProps {}
