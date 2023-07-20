@@ -8,14 +8,12 @@ export function ModalLogin() {
   const form = Form({
     initialValues: {
       name: "",
-      email: "",
       password: "",
       termsOfService: false,
     },
 
     validate: {
       name: (value) => (value.trim() !== "" ? null : "Invalid name"),
-      email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
       password: (value) => (value.length >= 5 ? null : "Password too small"),
     },
   });
@@ -39,12 +37,6 @@ export function ModalLogin() {
           />
           <TextInput
             withAsterisk
-            label="E-mail:"
-            placeholder="your@email.com"
-            {...form.getInputProps("email")}
-          />
-          <TextInput
-            withAsterisk
             label="Password:"
             placeholder="******"
             type={`password`}
@@ -57,7 +49,7 @@ export function ModalLogin() {
           />
           <Group position="right" mt="md">
             <Button type="submit">
-                Submit
+                Sign in
             </Button>
           </Group>
         </form>
