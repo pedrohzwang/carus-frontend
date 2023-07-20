@@ -2,9 +2,8 @@ import { TextInput, Checkbox, Button, Group, Box } from "@mantine/core";
 import { useForm as Form } from "@mantine/form";
 import { TopMenu } from "../../features/TopMenu/TopMenu";
 import { useMantineTheme } from "@mantine/core";
-import { ModalLoginProps } from "./ModalLogin.type";
 
-export function ModalLogin(props: ModalLoginProps) {
+export function ModalLogin() {
   const theme = useMantineTheme();
   const form = Form({
     initialValues: {
