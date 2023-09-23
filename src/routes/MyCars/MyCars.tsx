@@ -1,10 +1,9 @@
-import { Text } from "../../components/Text/Text";
+import { Text } from "@mantine/core";
 import { TopMenu } from "../../features/TopMenu/TopMenu";
 
 function MyCars() {
   return (
     <>
-      <TopMenu />
       <Text>Meus carros</Text>
     </>
   );

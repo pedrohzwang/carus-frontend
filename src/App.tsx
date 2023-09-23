@@ -9,6 +9,7 @@ import {
   ColorScheme,
 } from "@mantine/core";
 import { useState } from "react";
+import { TopMenu } from "./features/TopMenu/TopMenu";
 
 const App = () => {
   const [colorScheme, setColorScheme] = useState<ColorScheme>("dark");
@@ -24,6 +25,7 @@ const App = () => {
         theme={colorScheme === "dark" ? carUsDarkTheme : carUsLightTheme}
       >
         <Router>
+          <TopMenu />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/my-cars" element={<MyCars />} />

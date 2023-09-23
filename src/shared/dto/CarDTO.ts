@@ -9,4 +9,5 @@ export interface CarDTO {
   price: number;
   year: number;
   images?: string[];
+  address?: string;
 }
