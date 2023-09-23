@@ -1,5 +1,5 @@
 import { Link } from "../../components/Link/Link";
-import { Text } from "../../components/Text/Text";
+import { Text } from "@mantine/core";
 
 export const menus = [
   {

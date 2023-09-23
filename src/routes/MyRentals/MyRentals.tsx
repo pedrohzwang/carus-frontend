@@ -1,10 +1,9 @@
-import { Text } from "../../components/Text/Text";
+import { Text } from "@mantine/core";
 import { TopMenu } from "../../features/TopMenu/TopMenu";
 
 export function MyRentals() {
   return (
     <>
-      <TopMenu />
       <Text>Minhas locações</Text>
     </>
   );

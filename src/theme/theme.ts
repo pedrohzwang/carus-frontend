@@ -52,45 +52,89 @@ import { MantineThemeOverride } from "@mantine/core";
 //   stateDisabled: "#B2B2B8",
 // };
 
-// Based on MantineUI Theme
 export const carUsDarkTheme: MantineThemeOverride = {
   colorScheme: "dark",
   colors: {
-    brand: [
-      "#AC3FD9",
-      "#9226C0",
-      "#BE69E2",
-      "#721D96",
-      "#D194EC",
-      "#51136C",
-      "#E5BEF6",
-      "#FAE8FF",
-      "#320A42",
-      "#13021A",
-    ],
+    // Primary colors
+    primary: ["#2196f3"],
+    primaryDark: ["#1976d2"],
+    primaryLight: ["#64b5f6"],
+    // Secondary colors
+    secondary: ["#f50057"],
+    secondaryDark: ["#c51162"],
+    secondaryLight: ["#ff4081"],
+    // Background
+    background: ["#121212"],
+    surface: ["#212121"],
+    // Text
+    text: ["#ffffff"],
+    textSecondary: ["#bdbdbd"],
+    // Contrast
+    success: ["#4caf50"],
+    error: ["#f44336"],
+    warning: ["#ff9800"],
+    info: ["#2196f3"],
+    // Shadow
+    shadow: ["rgba(0, 0, 0, 0.3)"],
+    // Focus
+    focusRing: ["#64b5f6"],
+    white: ["#fff"],
   },
-  primaryColor: "brand",
-  primaryShade: 4,
+  globalStyles: (theme) => ({
+    body: {
+      backgroundColor: theme.colors.dark[7],
+      color: theme.colors.white,
+    },
+  }),
+  components: {
+    Text: {
+      styles: (theme) => ({
+        color: {
+          color: theme.colors.white,
+        },
+      }),
+    },
+  },
+  breakpoints: responsiveBreakpoints,
 };
 
 export const carUsLightTheme: MantineThemeOverride = {
   colorScheme: "light",
   colors: {
-    brand: [
-      "#AC3FD9",
-      "#9226C0",
-      "#BE69E2",
-      "#721D96",
-      "#D194EC",
-      "#51136C",
-      "#E5BEF6",
-      "#FAE8FF",
-      "#320A42",
-      "#13021A",
-    ],
+    primary: ["#2196f3"],
+    primaryDark: ["#1976d2"],
+    primaryLight: ["#64b5f6"],
+    secondary: ["#f50057"],
+    secondaryDark: ["#c51162"],
+    secondaryLight: ["#ff4081"],
+    background: ["#ffffff"],
+    surface: ["#f5f5f5"],
+    text: ["#212121"],
+    textSecondary: ["#757575"],
+    success: ["#4caf50"],
+    error: ["#f44336"],
+    warning: ["#ff9800"],
+    info: ["#2196f3"],
+    shadow: ["rgba(0, 0, 0, 0.3)"],
+    focusRing: ["#64b5f6"],
+    white: ["#fff"],
   },
-  primaryColor: "brand",
-  primaryShade: 7,
+  globalStyles: (theme) => ({
+    body: {
+      backgroundColor: theme.white,
+      color: theme.black,
+    },
+  }),
+  components: {
+    Text: {
+      styles: (theme) => ({
+        color: {
+          color: theme.colors.black,
+        },
+      }),
+    },
+  },
+  breakpoints: responsiveBreakpoints,
 };
 
 // const globalTheme: CarUsTheme = {
