@@ -10,6 +10,7 @@ import {
 } from "@mantine/core";
 import { useState } from "react";
 import { TopMenu } from "./features/TopMenu/TopMenu";
+import { ModalLogin } from "./components/ModalLogin/ModalLogin";
 
 const App = () => {
   const [colorScheme, setColorScheme] = useState<ColorScheme>("dark");
@@ -27,6 +28,7 @@ const App = () => {
         <Router>
           <TopMenu />
           <Routes>
+            <Route path="/login" element={<ModalLogin />} />
             <Route path="/" element={<Home />} />
             <Route path="/my-cars" element={<MyCars />} />
             <Route path="/my-rentals" element={<MyRentals />} />
